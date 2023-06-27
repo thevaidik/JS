@@ -12,14 +12,23 @@ const prompt = require("prompt-sync")();
 
 
 const deposit = () => {
-    const depositamount = prompt("enter a deposit amount");
-    const numberdepositamount = parsefloat(depositamount);
+    while (true) {
 
-    if (isNaN(numberdepositamount) || numberdepositamount <= 0) {
-        console.log("invalid deposit amount, Try again")
+
+        const depositamount = prompt("enter a deposit amount");
+        const numberdepositamount = Number(depositamount);
+
+        if (isNaN(numberdepositamount) || numberdepositamount <= 0) {
+            console.log("invalid deposit amount, Try again")
+        }
+        else {
+            return numberdepositamount;
+        }
     }
 }
-deposit();
+
+const depositamount = deposit();
+console.log(depositamount);
 
 
 
