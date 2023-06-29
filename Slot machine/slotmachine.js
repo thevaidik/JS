@@ -29,10 +29,10 @@ const deposit = () => {
 
 const getnumberoflines = () => {
     while(true){
-        const lines =prompt("enter no of lines to bet on");
+        const lines =prompt("enter no of lines to bet on (1-3)");
         const numberoflines = Number(lines);
 
-        if(isNaN(numberoflines) || numberoflines <=0 || numberoflines >=3) {
+        if(isNaN(numberoflines) || numberoflines <=0 || numberoflines >3) {
             console.log("invalid number of lines , try again");
         }
         else {
@@ -42,12 +42,17 @@ const getnumberoflines = () => {
 
 }
 
-const getbet = (balance) => {
+let balance = deposit();
+const numberoflines = getnumberoflines();
+const bet = getbet(balance)
+
+
+const getbet = (numberdepositamount, numberoflines) => {
     while (true){
-        const bet = prompt("enter the total bet");
+        const bet = prompt("enter the bet per line ");
         const numberbet = Number(bet);
 
-        if(isNaN(numberbet) || numberbet <= 0 || numberbet>balance) {
+        if(isNaN(numberbet) || numberbet <= 0 || numberbet > numberdepositamount / numberoflines) {
             console.log("invalid bet");
         }
         else {
