@@ -59,6 +59,10 @@ const getbet = (numberdepositamount, numberoflines) => {
     }
 }
 
+let fnbalance = deposit();
+const fnnumberoflines = getnumberoflines();
+const fnbet = getbet(fnbalance,fnnumberoflines);
+
 
 
 
