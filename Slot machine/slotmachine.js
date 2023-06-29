@@ -42,9 +42,7 @@ const getnumberoflines = () => {
 
 }
 
-let balance = deposit();
-const numberoflines = getnumberoflines();
-const bet = getbet(balance)
+
 
 
 const getbet = (numberdepositamount, numberoflines) => {
@@ -62,9 +60,9 @@ const getbet = (numberdepositamount, numberoflines) => {
 }
 
 
-let balance = deposit();
-const numberoflines = getnumberoflines();
-const bet = getbet(balance)
+
+
+
 
 
 
