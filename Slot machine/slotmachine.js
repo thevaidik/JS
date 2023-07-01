@@ -10,6 +10,23 @@
 //}
 const prompt = require("prompt-sync")(); //declaring prompt-sync is required
 
+const ROWS = 3;
+const COLS = 3;
+
+const SYMBOLS_COUNT = {
+    A: 2,
+    B: 4,
+    C: 6,
+    D: 8
+}
+
+const SYMBOL_VALUES ={
+    A: 5,
+    B: 4,
+    C: 3,
+     D : 2
+}
+
 
 const deposit = () => {
     while (true) {  //while loop to keep program running if criteria is not met
@@ -41,10 +58,6 @@ const getnumberoflines = () => {
     }
 
 }
-
-
-
-
 const getbet = (numberdepositamount, numberoflines) => {
     while (true){
         const bet = prompt("enter the bet per line ");
@@ -57,6 +70,10 @@ const getbet = (numberdepositamount, numberoflines) => {
             return numberbet;
         }
     }
+}
+
+const spin = () => {
+    const symbols = [];
 }
 
 let fnbalance = deposit();
