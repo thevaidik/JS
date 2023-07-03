@@ -73,8 +73,17 @@ const getbet = (numberdepositamount, numberoflines) => {
 }
 
 const spin = () => {
-    const symbols = [];
-}
+    const symbols = []; //creating an empty array
+    for (const [symbo, coun] of Object.entries(SYMBOLS_COUNT) ){  //using Object.entries method and
+        //and assigning symbols to variables.
+        console.log(symbo,coun)
+
+    }
+};
+
+spin();
+
+
 
 let fnbalance = deposit();
 const fnnumberoflines = getnumberoflines();
