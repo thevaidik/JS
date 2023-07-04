@@ -115,10 +115,18 @@ const transpose= (reels) =>{
 }
 
 
-const printrows = () =>
+const printrows = (rows) =>
 {
     for(const row of rows) {
-        let rowstring = "A|B|C";
+        let rowstring = "A";
+        for (const[i,symbol] of row.entries ()){
+            rowstring += symbol
+            if (i != rowlength -1 ){
+                rowstring += "|"
+            }
+        }
+        console.log(rowstring);
+
 
     }
 }
