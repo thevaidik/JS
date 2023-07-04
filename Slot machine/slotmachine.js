@@ -74,12 +74,30 @@ const getbet = (numberdepositamount, numberoflines) => {
 
 const spin = () => {
     const symbols = []; //creating an empty array
-    for (const [symbo, coun] of Object.entries(SYMBOLS_COUNT) ){  //using Object.entries method and
-        //and assigning symbols to variables.
-        console.log(symbo,coun)
+    for (const [symbol, count] of Object.entries(SYMBOLS_COUNT) ){  //using Object.entries method and
+        //and assigning symbols to variables symbols and count
+        for(let i=0 ; i< count ; i++ ){
+            symbols.push(symbol);  //push method do add element "symbol" in array symbols.
+        } //function is adding wheel number to array
+
 
     }
+    const reels = [];
+    for (let i=0; i<COLS; i++){  //pushing arr into arr equal to no of cols, to make a matrix(wheel)
+        reels.push([]);
+
+        const reelsSymbols = [...symbols];
+        for (let j= 0; j<ROWS;j++ ){
+            const randomIndex = Math.floor(Math.random() * reelsSymbols.length);
+            const selectedSymbol = reelsSymbols[randomIndex];
+            reels[i].push(selectedSymbol);
+            reelsSymbols.splice(randomIndex, 1);
+        }
+    }
+    console.log(reels);
 };
+
+//check if only one vaiable to assigned to function while funtions returns many values , will it cause an error
 
 spin();
 
