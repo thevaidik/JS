@@ -96,18 +96,45 @@ const spin = () => {
             reelsSymbols.splice(randomIndex, 1); //deleting selected random symbol as it cant be reused
         }
     }
-    console.log(symbols);
+    return reels;
+
 };
 
-//check if only one vaiable to assigned to function while funtions returns many values , will it cause an error
+const transpose= (reels) =>{
+    const rows = [];
 
-spin();
+    for(let i = 0; i < ROWS; i++){
+        rows.push([]);
+        for(let j= 0; j<COLS ; j++){
+            rows[i].push(reels[j][i]);
+        }
+    }
+    return rows;
+
+
+}
+
+
+const printrows = () =>
+{
+    for(const row of rows) {
+        let rowstring = "A|B|C";
+
+    }
+}
+
+
 
 
 
 let fnbalance = deposit();
 const fnnumberoflines = getnumberoflines();
 const fnbet = getbet(fnbalance,fnnumberoflines);
+const reels = spin();
+const rows = transpose(reels);
+console.log(reels);
+console.log(rows);
+
 
 
 
