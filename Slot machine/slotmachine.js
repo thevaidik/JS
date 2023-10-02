@@ -44,10 +44,11 @@ const deposit = () => {  //deposit amount
     }
 }
 
-const getnumberoflines = () => {  //lines to bet on
-    while(true){
-        const lines =prompt("enter no of lines to bet on (1-3)");
-        const numberoflines = Number(lines);
+const getnumberoflines = () => {
+  //lines to bet on
+  while (true) {
+    const lines = prompt("enter no of lines to bet on (1-3)");
+    const numberoflines = Number(lines);
 
         if(isNaN(numberoflines) || numberoflines <=0 || numberoflines >3) {
             console.log("invalid number of lines , try again");
